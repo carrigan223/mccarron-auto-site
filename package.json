@@ -1,0 +1,35 @@
+{
+  "name": "frontendmasters-gatsby",
+  "private": true,
+  "description": "Bare-bones starter for the Gatsby Frontend Masters workshop.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "dependencies": {
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.1.2",
+    "@emotion/styled": "^11.0.0",
+    "bootstrap": "^4.5.3",
+    "gatsby": "^2.29.1",
+    "gatsby-plugin-emotion": "^5.1.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "react": "^16.14.0",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "^16.14.0"
+  },
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "prettier": "^1.19.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}
