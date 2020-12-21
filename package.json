@@ -1,7 +1,7 @@
 {
-  "name": "frontendmasters-gatsby",
+  "name": "mccarron auto",
   "private": true,
-  "description": "Bare-bones starter for the Gatsby Frontend Masters workshop.",
+  "description": "Auto service website",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -30,6 +30,6 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/carrigan223/mccarron-auto-site"
   }
 }

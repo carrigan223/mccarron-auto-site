@@ -18,7 +18,7 @@ const Layout = ({ children }) => (
         }
         html,
         body {
-          /* margin: 0;
+          margin: 0;
           color: #555;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
             Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
@@ -29,7 +29,7 @@ const Layout = ({ children }) => (
           //the above is commented out due to the effects on header layout for responsiveness
           > div {
             margin-top: 0;
-          } */
+          }
         }
         h1,
         h2,
