@@ -9,8 +9,23 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Racing Sans One`],
+        fonts: [`Racing Sans One`, `Oswald`,],
         display: 'swap',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve(`./src/components/layout`),
+        },
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `posts`,
       },
     },
   ],
