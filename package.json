@@ -20,9 +20,11 @@
     "gatsby": "^2.29.1",
     "gatsby-plugin-emotion": "^5.1.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-react-helmet": "^3.7.0",
     "react": "^16.14.0",
     "react-bootstrap": "^1.4.0",
-    "react-dom": "^16.14.0"
+    "react-dom": "^16.14.0",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "cross-env": "^6.0.3",
