@@ -17,9 +17,9 @@ const Layout = ({ children }) => {
             margin: 0;
           }
           /* More info: https://bit.ly/2PsCnzk */
-          * + * {
+          /* * + * {
             margin-top: 1rem;
-          }
+          } */
           html,
           body {
             /* margin: 0;
@@ -67,10 +67,10 @@ const Layout = ({ children }) => {
       <Header />
       <main
         css={css`
-          margin: 2rem auto 4rem;
-          max-width: 90vw;
-          width: 550px;
-        `}
+          //margin: 2rem auto 4rem;
+          //max-width: 90vw;
+          //width: 850px;//this controls the width the post are taking up
+        `}//this was moved to blog container on index
       >
         {children}
       </main>
