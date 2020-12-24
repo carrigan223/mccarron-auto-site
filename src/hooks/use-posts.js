@@ -14,7 +14,7 @@ const UsePosts = () => {
                 fluid(
                   maxWidth: 100
                   maxHeight: 100
-                  grayscale: true
+                  #grayscale: true get rid of the asterisk to turn on grey scale
                 ) {
                   ...GatsbyImageSharpFluid_withWebp
                 }

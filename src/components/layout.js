@@ -15,7 +15,6 @@ const Layout = ({ children }) => {
           * {
             box-sizing: border-box;
             margin: 0;
-            
           }
           /* More info: https://bit.ly/2PsCnzk */
           /* * + * {
@@ -71,7 +70,7 @@ const Layout = ({ children }) => {
           //margin: 2rem auto 4rem;
           //max-width: 90vw;
           //width: 850px;//this controls the width the post are taking up
-        `}//this was moved to blog container on index
+        `} //this was moved to blog container on index
       >
         {children}
       </main>
