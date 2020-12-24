@@ -9,8 +9,18 @@ const UsePosts = () => {
             title
             slug
             author
+            image {
+              sharp: childImageSharp {
+                fluid(
+                  maxWidth: 100
+                  maxHeight: 100
+                  grayscale: true
+                ) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
-          excerpt
         }
       }
     }
@@ -20,7 +30,8 @@ const UsePosts = () => {
     title: post.frontmatter.title,
     author: post.frontmatter.author,
     slug: post.frontmatter.slug,
-    excerpt: post.frontmatter.excerpt,
+    image: post.frontmatter.image,
+    excerpt: post.excerpt,
   }));
 };
 

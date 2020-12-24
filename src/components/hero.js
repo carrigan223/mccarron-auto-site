@@ -8,6 +8,7 @@ const ImageBackground = styled(BackgroundImage)`
   background-position: bottom 34% center;
   background-size: cover;
   height: 55vh;
+  
 
   + * {
     margin-top: 0;
@@ -22,19 +23,22 @@ const TextBox = styled('div')`
   align-items: center;
   //padding: 0 calc((100vw - 550px) / 2) 2rem;
   width: 100%;
-  margin-top: 0;
+  margin-top: 3rem;
   margin-left: 1rem;
 
   h1 {
-    text-shadow: 5px 1px 3px red;
+    text-shadow: 5px 1px 3px black;
     font-size: 4.25rem;
     color: white;
     margin-top: 2rem;
+    text-decoration: underline;
   }
 
   h3 {
-    color: white;
+    color: red;
     font-family: 'Oswald';
+    text-shadow: 5px 1px 3px black;
+
   }
 
   p,
@@ -53,7 +57,7 @@ const Hero = () => {
     query {
       image: file(relativePath: { eq: "chevy_nova.jpg" }) {
         sharp: childImageSharp {
-          fluid {
+          fluid(quality: 100 grayscale: true) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -68,7 +72,7 @@ const Hero = () => {
           <Col>
             <TextBox>
               <h1>McCarron Auto</h1>
-              <h3>The berskhires most trusted source for auto repairs</h3>
+              <h3>The Berskhires most trusted source for auto repairs</h3>
               <Link to="/about">&rarr; go to about me</Link>
             </TextBox>
           </Col>

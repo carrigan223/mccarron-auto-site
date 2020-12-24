@@ -9,6 +9,28 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: 'gatsby-remark-embed-video',
+      options: {
+        width: 800,
+        ratio: 1.77,
+        height: 400,
+        related: false,
+        noIframeBorder: true,
+      },
+    },
+    {
+      resolve: `gatsby-remark-responsive-iframe`,
+      options: { maxWidth: 590 },
+    },
+    {
+      resolve: `gatsby-remark-responsive-iframe`,
+      options: {
+        wrapperStyle: `margin-bottom: 1.0725rem`,
+      },
+    },
+    `gatsby-transformer-remark`,
+    `gatsby-remark-images`,
+    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [`Racing Sans One`, `Oswald`],
