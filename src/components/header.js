@@ -13,7 +13,14 @@ const TitleLink = styled(Link)`
   margin-left: 1em;
   padding: 0.25rem;
   text-decoration: none;
-  text-shadow: 0 0 2px red, 0 0 2px red, 0 0 1px red, 0 0 1px red;
+  text-shadow: 0 0 2px black, 0 0 2px black, 0 0 1px black, 0 0 1px black;
+
+  :hover {
+    color: white;
+    text-shadow: 5px 4px 4px grey;
+    color: white;
+    text-decoration: none;
+  }
 `;
 
 const NavLink = styled(Link)`
@@ -23,12 +30,19 @@ const NavLink = styled(Link)`
   font-family: 'Racing Sans One';
   line-height: 1;
   margin: 0 0.5rem 0 0;
-  padding: 0.15rem;
+  padding: 0.45rem;
   text-decoration: none;
   text-shadow: 0 0 2px red, 0 0 2px red, 0 0 1px red, 0 0 1px red;
 
-  &.current-page {
+  :hover {
+    box-shadow: 5px 4px 4px grey;
+    color: white;
+    text-decoration: none;
     border: 2px solid white;
+  }
+
+  &.current-page {
+    text-decoration: underline;
   }
 `; //#113a7e
 
@@ -44,7 +58,7 @@ const StyledHeader = styled(Navbar)`
 
 const CollapseContainer = styled(Navbar.Collapse)`
   justify-content: flex-end;
-  
+
   padding-top: 1em;
 `;
 
