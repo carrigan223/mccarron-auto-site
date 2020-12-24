@@ -2,9 +2,9 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import { Container, Row, Col } from 'react-bootstrap';
+import BackgroundImage from 'gatsby-background-image';
 
-const ImageBackground = styled('div')`
-  background-image: url('/images/chevy_nova.jpg');
+const ImageBackground = styled(BackgroundImage)`
   background-position: bottom 34% center;
   background-size: cover;
   height: 55vh;
@@ -14,7 +14,7 @@ const ImageBackground = styled('div')`
   }
 `;
 
-const TextBox = styled('Col')`
+const TextBox = styled('div')`
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -31,10 +31,10 @@ const TextBox = styled('Col')`
     color: white;
     margin-top: 2rem;
   }
-  
+
   h3 {
     color: white;
-    font-family: "Oswald";
+    font-family: 'Oswald';
   }
 
   p,
@@ -49,15 +49,29 @@ const TextBox = styled('Col')`
 `;
 
 const Hero = () => {
+  const { image } = useStaticQuery(graphql`
+    query {
+      image: file(relativePath: { eq: "chevy_nova.jpg" }) {
+        sharp: childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `);
+
   return (
-    <ImageBackground>
+    <ImageBackground Tag="section" fluid={image.sharp.fluid} fadeIn="soft">
       <Container>
         <Row>
-          <TextBox>
-            <h1>McCarron Auto</h1>
-            <h3>The berskhires most trusted source for auto repairs</h3>
-            <Link to="/about">&rarr; go to about me</Link>
-          </TextBox>
+          <Col>
+            <TextBox>
+              <h1>McCarron Auto</h1>
+              <h3>The berskhires most trusted source for auto repairs</h3>
+              <Link to="/about">&rarr; go to about me</Link>
+            </TextBox>
+          </Col>
         </Row>
       </Container>
     </ImageBackground>

@@ -6,10 +6,12 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-emotion',
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Racing Sans One`, `Oswald`,],
+        fonts: [`Racing Sans One`, `Oswald`],
         display: 'swap',
       },
     },
@@ -26,6 +28,13 @@ module.exports = {
       options: {
         name: `posts`,
         path: `posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `images`,
       },
     },
   ],
