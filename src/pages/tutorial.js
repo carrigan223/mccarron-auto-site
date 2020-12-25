@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import Layout from '../components/layout';
@@ -23,7 +22,7 @@ const BlogContainer = styled('div')`
   margin: 2rem auto 4rem;
   max-width: 90vw;
   padding: 1rem;
-  margin-right: 1rem;
+  margin-right: 14rem;
   padding-bottom: 2.5rem;
 `;
 
@@ -53,7 +52,15 @@ export default () => {
               <br />
               with any questions.
             </p>
-            <SquareButton to="/contact"><text css={css`padding: 1rem;`}>Contact Us</text></SquareButton>
+            <SquareButton to="/contact">
+              <text
+                css={css`
+                  padding: 1rem;
+                `}
+              >
+                Contact Us
+              </text>
+            </SquareButton>
           </InfoContainer>
           <BlogCol>
             <BlogContainer>

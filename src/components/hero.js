@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import { Container, Row, Col } from 'react-bootstrap';
 import BackgroundImage from 'gatsby-background-image';
 
@@ -8,7 +8,7 @@ const ImageBackground = styled(BackgroundImage)`
   background-position: bottom 34% center;
   background-size: cover;
   height: 55vh;
-  
+  max-width: 100vw;
 
   + * {
     margin-top: 0;
@@ -19,16 +19,15 @@ const TextBox = styled('div')`
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   //padding: 0 calc((100vw - 550px) / 2) 2rem;
-  width: 100%;
-  margin-top: 3rem;
+  max-width: 100vw;
   margin-left: 1rem;
 
   h1 {
     text-shadow: 5px 1px 3px black;
-    font-size: 4.25rem;
+    font-size: 3.55rem;
     color: white;
     margin-top: 2rem;
     text-decoration: underline;
@@ -38,7 +37,6 @@ const TextBox = styled('div')`
     color: red;
     font-family: 'Oswald';
     text-shadow: 5px 1px 3px black;
-
   }
 
   p,
@@ -57,7 +55,7 @@ const Hero = () => {
     query {
       image: file(relativePath: { eq: "chevy_nova.jpg" }) {
         sharp: childImageSharp {
-          fluid(quality: 100 grayscale: true) {
+          fluid(quality: 100, grayscale: true) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -67,13 +65,12 @@ const Hero = () => {
 
   return (
     <ImageBackground Tag="section" fluid={image.sharp.fluid} fadeIn="soft">
-      <Container>
+      <Container fluid>
         <Row>
           <Col>
             <TextBox>
               <h1>McCarron Auto</h1>
               <h3>The Berskhires most trusted source for auto repairs</h3>
-              <Link to="/about">&rarr; go to about me</Link>
             </TextBox>
           </Col>
         </Row>

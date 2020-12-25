@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const TitleLink = styled(Link)`
   justify-content: flex-start;
@@ -53,6 +54,7 @@ const StyledHeader = styled(Navbar)`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 100vw;
   //padding: 0.5rem calc((100vw - 550px - 0.5rem) / 2);
 `;
 
@@ -65,28 +67,46 @@ const CollapseContainer = styled(Navbar.Collapse)`
 const StyledToggler = styled(Navbar.Toggle)`
   border: none;
   color: red;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const NavCol = styled('Col')`
+  padding: 1rem;
 `;
 
 export default function App() {
   return (
     <StyledHeader expand="lg">
-      <TitleLink to="/landing">McCarron Auto</TitleLink>
+      <Container fluid>
+        <TitleLink to="/landing">McCarron Auto</TitleLink>
 
-      <StyledToggler className="navbar-dark" />
-      <CollapseContainer>
-        <NavLink to="/" activeClassName="current-page">
-          Home
-        </NavLink>
-        <NavLink to="/about/" activeClassName="current-page">
-          About
-        </NavLink>
-        <NavLink to="/contact/" activeClassName="current-page">
-          Contact
-        </NavLink>
-        <NavLink to="/tutorial/" activeClassName="current-page">
-          Tutorials
-        </NavLink>
-      </CollapseContainer>
+        <StyledToggler className="navbar-dark" />
+        <CollapseContainer>
+          <Row>
+            <NavCol xs={{ span: 6, offset: 3 }} md={{ span: 2 }}>
+              <NavLink to="/" activeClassName="current-page">
+                Home
+              </NavLink>
+            </NavCol>
+            <NavCol xs={{ span: 6, offset: 3 }} md={{ span: 2 }}>
+              <NavLink to="/about/" activeClassName="current-page">
+                About
+              </NavLink>
+            </NavCol>
+            <NavCol xs={{ span: 6, offset: 3 }} md={{ span: 2 }}>
+              <NavLink to="/contact/" activeClassName="current-page">
+                Contact
+              </NavLink>
+            </NavCol>
+            <NavCol xs={{ span: 6, offset: 3 }} md={{ span: 2 }}>
+              <NavLink to="/tutorial/" activeClassName="current-page">
+                Tutorials
+              </NavLink>
+            </NavCol>
+          </Row>
+        </CollapseContainer>
+      </Container>
     </StyledHeader>
   );
 }
