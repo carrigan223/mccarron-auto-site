@@ -20,11 +20,8 @@ module.exports = {
     },
     {
       resolve: `gatsby-remark-responsive-iframe`,
-      options: { maxWidth: 590 },
-    },
-    {
-      resolve: `gatsby-remark-responsive-iframe`,
       options: {
+        maxWidth: 590,
         wrapperStyle: `margin-bottom: 1.0725rem`,
       },
     },

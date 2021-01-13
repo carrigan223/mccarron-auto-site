@@ -6,7 +6,7 @@ import Layout from '../components/layout';
 import PostPreview from '../components/post-preview';
 import UsePosts from '../hooks/use-posts';
 import Hero from '../components/hero';
-import Image from 'gatsby-image';
+//import Image from 'gatsby-image';
 import { Container, Row, Col } from 'react-bootstrap';
 
 const BlogHeader = styled(Link)`
@@ -24,17 +24,6 @@ const BlogContainer = styled('div')`
 
 export default () => {
   const posts = UsePosts();
-  const { image } = useStaticQuery(graphql`
-    query {
-      image: file(relativePath: { eq: "American-flag.jpg" }) {
-        sharp: childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `);
   return (
     <>
       <Layout>
@@ -67,14 +56,6 @@ export default () => {
                 background-color: black;
               `}
             >
-              <Image
-                fluid={image.sharp.fluid}
-                alt="American Flag Image"
-                css={css`
-                  margin-top: 1rem;
-                  border-radius: 100%;
-                `}
-              />
               <h5
                 css={css`
                   color: white;
